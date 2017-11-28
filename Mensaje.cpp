@@ -61,11 +61,11 @@ void Mensaje::setPaquete(string p, int tipo) {
 vector<string> Mensaje::obtenerInfo() {
     vector<string> info;
     int counter = 0;
-    string aux = "";
+    string aux;
 
-    for (int x = 0; x < paq.size(); x++) {
-        if (paq[x] != '\n' && paq[x] != '\000') {
-            aux += paq[x];
+    for (char x : paq) {
+        if (x != '\n' && x != '\000') {
+            aux += x;
         } else {
             info.push_back(aux);
             aux = "";

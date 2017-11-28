@@ -98,7 +98,6 @@ void Server::analizarPaquete (int sock, int tipoMensaje) {
             cout << v[5];
         }
     } else {
-
         cout << "Paquete recibido desde " << v[0] << ": ";
         if (tipoMensaje == 1) {
             cout << "[" << v[0] << ", " << v[1] << ", " << v[2] << ", " << v[3] << ", " << v[4] << "]" << endl;

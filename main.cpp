@@ -5,13 +5,13 @@
 using namespace std;
 
 //Puertos
-//Carritos recibe de luces en 9090
-//Luces recibe de carritos en 2626
-//Router recibe de Terminal en 20000
-//Terminal recibe de Router en 20001
+//Carritos recibe de Luces en 9090
+//Luces recibe de Carritos en 2626
+//Terminal recibe de RouterCarritos en 20000
+//RouterCarritos recibe de Terminal en 20001
 
 void interfazLuces() {
-    auto * sL = new Server(20000);
+    auto * sL = new Server(20001);
     sL->socketS(1);
 }
 
