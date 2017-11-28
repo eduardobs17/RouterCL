@@ -11,6 +11,10 @@
  */
 Client::Client() {
     t = new Tabla();
+    ipC = const_cast<char *>("localhost");
+    ipL = const_cast<char *>("localhost");
+    portC = const_cast<char *>("9090");
+    portL = const_cast<char *>("2001");
 }
 
 /**
@@ -58,7 +62,7 @@ int Client::socketC(char* ip, char* port, string msj) {
     //Se limpia el struct. Posteriormente, se llena.
     bzero((char *) &serv_addr, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
-    bcopy((char *)server->h_addr, (char *)&serv_addr.sin_addr.s_addr, static_cast<size_t>(server->h_length));
+    bcopy(server->h_addr, (char *)&serv_addr.sin_addr.s_addr, static_cast<size_t>(server->h_length));
     serv_addr.sin_port = htons(static_cast<uint16_t>(portno));
     if (connect(sockfd,(struct sockaddr *) &serv_addr,sizeof(serv_addr)) < 0)
         error("ERROR connecting");
@@ -178,17 +182,16 @@ void Client::prepararMensaje(string redDest, string msj) {
     }
 
     if (t->idSalida[i] == "165.8.6.25") { //Se envia a carritos
-        socketC(const_cast<char *>("localhost"), const_cast<char *>("5555"), msj);
+        socketC(ipC, portC, msj);
     } else { //Se envia a luces
         if (t->idSalida[i] == "25.25.25.25") {
-            socketC(const_cast<char *>("localhost"), const_cast<char *>("20001"), msj);
+            socketC(ipL, portL, msj);
         } else { //CASO "DIRECTO"
             if (redDestino == "165.8") { //Se envia a carritos
-                socketC(const_cast<char *>("localhost"), const_cast<char *>("5555"), msj);
+                socketC(ipC, portC, msj);
             } else { //Se envia a luces
-                socketC(const_cast<char *>("localhost"), const_cast<char *>("20001"), msj);
+                socketC(ipL, portL, msj);
             }
         }
     }
-
 }

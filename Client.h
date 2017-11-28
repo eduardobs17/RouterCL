@@ -14,6 +14,10 @@ class Client {
 
 private:
     Tabla* t;
+    char* ipC;
+    char* ipL;
+    char* portL;
+    char* portC;
 };
 
 #endif //REDESROUTERC_CLIENT_H
