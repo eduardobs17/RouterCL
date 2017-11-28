@@ -7,8 +7,8 @@ using namespace std;
 //Puertos
 //Carritos recibe de luces en 9090
 //Luces recibe de carritos en 2626
-//RouterLC recibe de LucesT en 20000
-//LucesT recibe de RouterLC en 20001
+//Router recibe de Terminal en 20000
+//Terminal recibe de Router en 20001
 
 void interfazLuces() {
     auto * sL = new Server(20000);
