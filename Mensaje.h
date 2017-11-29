@@ -26,8 +26,6 @@ private:
     //idAccion
     //mensaje
     string paq;
-
-    string contenido;
 };
 
 #endif // MENSAJE_H

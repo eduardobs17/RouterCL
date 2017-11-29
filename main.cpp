@@ -26,6 +26,8 @@ int main() {
     thread hiloL(interfazLuces);
     thread hiloC(interfazCarritos);
 
+    interfazLuces();
+
     hiloC.join();
     hiloL.join();
     return 0;

@@ -6,7 +6,6 @@ using namespace std;
 /** Constructor. */
 Mensaje::Mensaje() {
     paq = "";
-    contenido = "";
 }
 
 /** Agrega la IP fuente al mensaje. */
@@ -39,7 +38,6 @@ void Mensaje::setIdAccion(int id) {
 
 /** Agrega el mensaje que se desea transmitir. */
 void Mensaje::setMensaje(string msg) {
-    contenido = msg;
     paq += msg;
     paq += '\n';
 }
