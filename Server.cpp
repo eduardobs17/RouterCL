@@ -106,14 +106,14 @@ void Server::analizarPaquete (int sock, int tipoMensaje) {
     vector<string> v = msj->obtenerInfo();
 
     if (v[1] == "25.0.7.25") {
-        cout << "Mensaje recibido desde " << v[0] << ": " << v[4] << endl;
+        cout << "Mensaje recibido desde " << v[0] << ": " << v[4] << endl << endl;
     } else {
         cout << "Paquete recibido desde " << v[0] << ": ";
         cout << "[" << v[0] << ", " << v[1] << ", " << v[2] << ", " << v[3] << ", ";
         if (tam != -1) {
-            cout << tam << ", " << v[4] << "]" << endl;
+            cout << tam << ", " << v[4] << "]" << endl << endl;
         } else {
-            cout << v[4] << "]" << endl;
+            cout << v[4] << "]" << endl << endl;
         }
 
         auto *c = new Client();
@@ -122,11 +122,11 @@ void Server::analizarPaquete (int sock, int tipoMensaje) {
         cout << "Paquete enviado a " << v[1] << ": ";
         cout << "[" << v[0] << ", " << v[1] << ", " << v[2] << ", " << v[3] << ", ";
         if (tam != -1) {
-            cout << tam << ", " << v[4] << "]" << endl;
-            cout << "Esperando conexiones desde 25.0.2.5..." << endl;
+            cout << tam << ", " << v[4] << "]" << endl << endl;
+            cout << "Esperando conexiones desde 165.8.0.6..." << endl << endl;
         } else {
-            cout <<  v[4] << "]" << endl;
-            cout << "Esperando conexiones desde 165.8.0.6..." << endl;
+            cout <<  v[4] << "]" << endl << endl;
+            cout << "Esperando conexiones desde 25.0.2.5..." << endl << endl;
         }
     }
 }
