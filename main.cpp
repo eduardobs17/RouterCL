@@ -7,11 +7,11 @@ using namespace std;
 //Puertos
 //Carritos recibe de Luces en 9090
 //Luces recibe de Carritos en 2626
-//Terminal recibe de RouterCarritos en 20000
-//RouterCarritos recibe de Terminal en 20001
+//Terminal recibe de RouterCarritos en 2000
+//RouterCarritos recibe de Terminal en 2001
 
 void interfazLuces() {
-    auto * sL = new Server(20001);
+    auto * sL = new Server(2001);
     sL->socketS(1);
 }
 
