@@ -11,7 +11,7 @@ using namespace std;
 //RouterCarritos recibe de Terminal en 2001
 
 void interfazLuces() {
-    auto * sL = new Server(2927);
+    auto * sL = new Server(2001);
     sL->socketS(1);
 }
 
@@ -25,8 +25,6 @@ int main() {
 
     thread hiloL(interfazLuces);
     thread hiloC(interfazCarritos);
-
-    interfazLuces();
 
     hiloC.join();
     hiloL.join();
