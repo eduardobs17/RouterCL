@@ -56,12 +56,11 @@ void Server::socketS(int tipoMensaje) {
     while (true) {
         newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
         if (newsockfd < 0) { error("ERROR on accept"); }
-        analizarPaquete(newsockfd, tipoMensaje);
         pid = fork();
         if (pid < 0) { error("ERROR on fork"); }
         if (pid == 0)  {
             close(sockfd);
-            //analizarPaquete(newsockfd, tipoMensaje);
+            analizarPaquete(newsockfd, tipoMensaje);
             exit(0);
         } else {
             close(newsockfd);

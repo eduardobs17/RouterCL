@@ -11,7 +11,7 @@ using namespace std;
 //RouterCarritos recibe de Terminal en 2001
 
 void interfazLuces() {
-    auto * sL = new Server(2001);
+    auto * sL = new Server(2927);
     sL->socketS(1);
 }
 
